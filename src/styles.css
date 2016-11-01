@@ -34,6 +34,13 @@ li a:hover {
     padding-bottom: 30px;
 }
 
+h1 {
+    height: 90%; 
+    text-align:center; 
+    display:table;
+    width:100%;
+}
+
 p {
     color: red;
     padding-top: 10px;
