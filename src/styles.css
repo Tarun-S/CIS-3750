@@ -1,5 +1,6 @@
 body {
     background-color: antiquewhite;
+    background-repeat: no-repeat;
 }
 
 ul {
@@ -19,7 +20,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 32px;
+    padding: 15px;
     text-decoration: none;
 }
 
