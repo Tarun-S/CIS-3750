@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="signin.css" rel="stylesheet">
     </head>
     <body>
-        <ul>
-            <li><a href="default.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #2EA662";>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<a href="#" class="navbar-left"><img src="..//images/aretlogo.png"height="50" width="50"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav"> 
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li> 
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-        <h1>
-            <img src="images/aret.jpg" alt="logo" width="90" height="90"/>
-            ARET's Farmer and Crop Management System.
-        </h1>
-        <h3>Log In: </h3>
-        <div>
-            Username: <input type="text">
-        </div>
-        <div>
-            Password: <input type="text"> 
-        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+            <form class="form-signup">
+            <h2 class="form-signup-heading">Sign In</h2>
+            <label for="inputUser" class="sr-only">Email address</label>
+            <input type="email" id="inputUser" class="form-control" placeholder="Username" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+             &nbsp;
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+          </form>
+
     </body>
 </html>
