@@ -50,12 +50,13 @@ body,
 }
 
 .view {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('..//images/malawicover.jpg')no-repeat center center fixed ;
-
+    /**background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('..//images/malawicover.jpg')no-repeat center center fixed ;**/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-image: url('..//images/malawicover.jpg');
+    background-repeat: no-repeat;
 
     
 }
