@@ -1,7 +1,7 @@
 
     .navbar {
       margin-bottom: 0;
-      border-radius: 0;
+      border-radius: 2;
       
     }
 
@@ -14,9 +14,7 @@
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     
-    .row.content {
-      height: 350px
-    }
+  
     /* Set gray background color and 100% height */
     
     .sidenav {
@@ -28,34 +26,21 @@
 
     /* Set black background color, white text and some padding */
     
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    
-
-
-
-.flex-center {
-    color: #fff;
+ html, body {
+  height: 100%;
 }
 
-html,
-body,
-.view {
-    height: 100%;
-    
+#wrap {
+  min-height: 100%;
 }
 
-.view {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    
+.footer {
+  position: absolute;
+  bottom: auto;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  width: 100%;
+  background-color: #CCC;
 }
+
 
