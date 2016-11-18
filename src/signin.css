@@ -2,7 +2,16 @@
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      
     }
+
+    .navbar .nav > li > a {
+    float: none;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:  #fff;
+}
+
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     
     .row.content {
@@ -26,26 +35,28 @@
     }
     /* On small screens, set height to 'auto' for sidenav and grid */
     
-   html,
+
+
+
+.flex-center {
+    color: #fff;
+}
+
+html,
 body,
 .view {
     height: 100%;
+    
 }
 
 .view {
-    background: url("http://mdbootstrap.com/images/regular/city/img%20(17).jpg")no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('..//images/malawicover.jpg')no-repeat center center fixed ;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    
 }
 
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {
-        height: auto;
-      }
-    }
