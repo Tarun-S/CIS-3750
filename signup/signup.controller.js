@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('RegisterController', SignupController);
+        .controller('SignupController', SignupController);
 
     SignupController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
     function SignupController(UserService, $location, $rootScope, FlashService) {

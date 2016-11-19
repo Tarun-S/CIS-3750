@@ -28,8 +28,8 @@
             })
 
             .when('/resources', {
-                controller: 'ResourcesController',
-                templateUrl: 'extension/extension.view.html',
+                controller: 'ResourceController',
+                templateUrl: 'resources/resources.view.html',
                 controllerAs: 'vm'
             })
 
@@ -40,7 +40,7 @@
             })
 
             .when('/signup1', {
-                controller: 'SignUpController',
+                controller: 'SignupController',
                 templateUrl: 'signup/signup1.view.html',
                 controllerAs: 'vm'
             })
