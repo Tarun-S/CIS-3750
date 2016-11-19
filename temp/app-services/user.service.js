@@ -32,9 +32,9 @@
 
         function Create(user) {
             return $http({
-                url: 'localhost:8080/farmers/',
+                url: 'localhost:8000/farmers/',
                 method: 'POST',
-                data: { 'username': username, "password": password, 'current_crops': "[]", 'past_crops': "[]" },
+                data: { 'username': username, 'password': password, 'current_crops': "[]", 'past_crops': "[]" },
             }).then(handleSuccess, handleError('Error creating user'));
         }
 
