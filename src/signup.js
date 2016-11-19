@@ -8,7 +8,8 @@ function filterDistricts(a, b) {
         var str = region.options[region.selectedIndex].value;
         if (str == "northern")
         {
-            list = ['Chitipa',
+            list = ['',
+                    'Chitipa',
                     'Karonga',
                     'Likoma',
                     'Mzimba',
@@ -17,7 +18,8 @@ function filterDistricts(a, b) {
         }
         else if (str == "central")
         {
-            list = ['Dedza',
+            list = ['',
+                    'Dedza',
                     'Dowa',
                     'Kasungu',
                     'Lilongwe',
@@ -29,7 +31,8 @@ function filterDistricts(a, b) {
         }
         else if (str == "southern")
         {
-            list = ['Balaka',
+            list = ['',
+                    'Balaka',
                     'Blantyre',
                     'Chikwawa',
                     'Chiradzulu',
@@ -47,14 +50,21 @@ function filterDistricts(a, b) {
         {
             list = []
         }
+        addList(list);
     }
-    for (var item in list)
+    
+}
+
+function addList(list)
+{
+    for (var i = 0; i < list.length; i++)
     {
         var option = document.createElement('option');
-        option.text = option.value = item;
+        option.text = option.value = list[i];
+        console.log(list[i]);
         try {
             district.add(option, null); //Standard
-        }catch(error) {
+        } catch(error) {
             district.add(option); // IE only
         }
     }
