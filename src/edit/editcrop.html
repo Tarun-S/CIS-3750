@@ -5,9 +5,11 @@
   <title>Sign Up</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="signin.css" rel="stylesheet">
+  <script src="editcrop.js"></script>
+  <link href="../index.css" rel="stylesheet">
 
   <body>
 
@@ -19,18 +21,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-          <a href="#" class="navbar-left"><img src="..//images/aretlogo.png" height="50" width="50"></a>
+          <a href="#" class="navbar-left"><img src="../../images/aretlogo.png" height="50" width="50"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Projects</a></li>
+            <li class="active"><a href="../home/index.html">Home</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../search/search.html">Search</a></li>
+            <li><a href="../extension/ExtensionMaterial.html">Resources</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="#">Farming Information</a></li>
+            <li><a href="../surveys/surveys.html">Surveys</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+            <li><a href=""><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
           </ul>
           </li>
           </ul>
@@ -54,13 +59,15 @@
             </p>
           </div>
           <div class="col-md-6">
-            <form id="addCrops"role="form">
-              <div class="form-group">
-                <label class="control-label" for="crop">Crop</label>
-                <input class="form-control" id="crop" placeholder="Enter crop" type="text">
+            <form id="cropsForm"role="form">
+              <div class="form-group" id="croplist">
+                <div class="form-group">
+                  <label class="control-label" for="crop">Crop</label>
+                  <input class="form-control" id="crop" placeholder="Enter crop" type="text">
+                </div>
               </div>
               <button type="submit" class="btn btn-default">Save Changes</button>
-              <button type="submit" class="btn btn-default" onclick="">Add Crop</button>
+              <button type="submit" class="btn btn-default" onclick="addCrop()">Add Crop</button>
             <!--  <button type="submit" class="btn btn-default">Next</button>-->
             </form>
           </div>
@@ -71,7 +78,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <img src="..//images/malawicover.jpg" class="img-responsive">
+            <img src="../../images/malawicover.jpg" class="img-responsive">
           </div>
         </div>
       </div>
