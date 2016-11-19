@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Sign Up</title>
+  <title>Edit Crops</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -47,17 +47,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1>Sign up for ARET's Farmer Crop Management System!</h1>
+            <h1>Edit the crops that you are growing!</h1>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <p>Agricultural Research and Extension Trust (ARET) is Malawi’s premier institution in tobacco research and technology
-              dissemination. It is primarily concerned with development and dissemination of tobacco technologies, as its
-              activities are sanctioned and funded by tobacco growers. ARET interacts with tobacco farmers and the farming
-              business community in general in and through the following areas:
-            </p>
-          </div>
           <div class="col-md-6">
             <form id="cropsForm"role="form">
               <div class="form-group" id="croplist">
@@ -66,8 +59,8 @@
                   <input class="form-control" id="crop" placeholder="Enter crop" type="text">
                 </div>
               </div>
-              <button type="submit" class="btn btn-default">Save Changes</button>
-              <button type="submit" class="btn btn-default" onclick="addCrop()">Add Crop</button>
+              <button type="submit" type="submit" class="btn btn-default">Save Changes</button>
+              <button type="submit" type="button" class="btn btn-default" onclick="addCrop(); return false;">Add Crop</button>
             <!--  <button type="submit" class="btn btn-default">Next</button>-->
             </form>
           </div>
