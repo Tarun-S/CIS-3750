@@ -27,8 +27,34 @@
     <script src="edit/edit.controller.js"></script>
     <script src="login/login.controller.js"></script>
     <script src="resources/resources.controller.js"></script>
-    <script src="search/search.controller.js"></scipt>
+    <script src="search/search.controller.js"></script>
     <script src="signup/signup.controller.js"></script>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #2EA662" ;>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-left"><img src="../images/aretlogo.png" height="50" width="50"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" ng-controller="HeaderController">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('#')}"><a href="#">Home</a></li>
+                <li ng-class="{ active: isActive('#/about')}"><a href="#/about">About</a></li>
+                <li ng-class="{ active: isActive('#/search')}"><a href="#/search">Search</a></li>
+                <li ng-class="{ active: isActive('#/resources')}"><a href="#/resources">Resources</a></li>
+                <li ng-class="{ active: isActive('#/contact')}"><a href="#/contact">Contact</a></li>
+                <li ng-class="{ active: isActive('#/farminfo')}"><a href="#/farminfo">Farming Information</a></li>
+                <li ng-class="{ active: isActive('#/surveys')}"><a href="#/surveys">Surveys</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{ active: isActive('/signup1')}"><a href="#/signup1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <div class="jumbotron">
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">

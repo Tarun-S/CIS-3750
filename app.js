@@ -3,8 +3,18 @@
 
     angular
         .module('app', ['ngRoute', 'ngCookies'])
+        .controller('HeaderController', HeaderController)
         .config(config)
         .run(run);
+
+    HeaderController.$inject = ['$scope','$location'];
+    function HeaderController($scope, $location) 
+    {
+        $scope.isActive = function (viewLocation) 
+        { 
+            return viewLocation === $location.path();
+        };
+    }
 
     config.$inject = ['$routeProvider', '$locationProvider'];
     function config($routeProvider, $locationProvider) {
@@ -16,7 +26,7 @@
             })
 
             .when('/login', {
-                controller: 'LoginController',
+                controller: 'HeaderController',
                 templateUrl: 'login/login.view.html',
                 controllerAs: 'vm'
             })
