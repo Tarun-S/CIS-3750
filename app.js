@@ -39,9 +39,14 @@
                 controllerAs: 'vm'
             })
 
-            .when('/signup', {
+            .when('/signup1', {
                 controller: 'SignUpController',
-                templateUrl: 'signup/signup.view.html',
+                templateUrl: 'signup/signup1.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/signup2', {
+                controller: 'SignupController',
+                templateUrl: 'signup/signup2.view.html',
                 controllerAs: 'vm'
             })
 
@@ -58,7 +63,7 @@
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/signup']) === -1;
+            var restrictedPage = $.inArray($location.path(), ['/login', '/signup1']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path('/login');
