@@ -1,67 +1,53 @@
 <!DOCTYPE html>
-<html ng-app="app">
-<head>
-    <meta charset="utf-8" />
-    <title>ARET's Farmer Crop Management System</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-    <link href="app-content/index.css" rel="stylesheet" />
-</head>
-<body>
-    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
-    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
-    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
-
-    <script src="app.js"></script>
-    <script src="app-services/authentication.service.js"></script>
-    <script src="app-services/flash.service.js"></script>
-
-    <!-- Real user service that uses an api -->
-    <script src="app-services/user.service.js"></script>
-
-    <!-- Fake user service for demo that uses local storage -->
-    <!--<script src="app-services/user.service.local-storage.js"></script>-->
-
-    <!--<script src="home/home.controller.js"></script>-->
-    <script src="about/about.controller.js"></script>
-    <script src="edit/edit.controller.js"></script>
-    <script src="login/login.controller.js"></script>
-    <script src="resources/resources.controller.js"></script>
-    <script src="search/search.controller.js"></script>
-    <script src="signup/signup.controller.js"></script>
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #2EA662" ;>
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-left"><img src="../images/aretlogo.png" height="50" width="50"></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar" ng-controller="HeaderController">
+<html ng-app='app'>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="app-content/index.css">
+        <title>ARET's Farmer Crop Management System</title>
+    </head>
+    <body>
+        <h1>ARET's Farmer Crop Management System</h1>
+        <nav class="navbar navbar-inverse" role="navigation" style="background-color: #2EA662">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a ui-sref="login"><img src="../images/aretlogo.png" height="50" width="50"></a>
+            </div>
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('#')}"><a href="#">Home</a></li>
-                <li ng-class="{ active: isActive('#/about')}"><a href="#/about">About</a></li>
-                <li ng-class="{ active: isActive('#/search')}"><a href="#/search">Search</a></li>
-                <li ng-class="{ active: isActive('#/resources')}"><a href="#/resources">Resources</a></li>
-                <li ng-class="{ active: isActive('#/contact')}"><a href="#/contact">Contact</a></li>
-                <li ng-class="{ active: isActive('#/farminfo')}"><a href="#/farminfo">Farming Information</a></li>
-                <li ng-class="{ active: isActive('#/surveys')}"><a href="#/surveys">Surveys</a></li>
+                <li><a ui-sref="search" >Search</a></li>
+                <li><a ui-sref="resources">Resources</a></li>
+                <li><a ui-sref="error">Farming Information</a></li>
+                <li><a ui-sref="error">Surveys</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{ active: isActive('/signup1')}"><a href="#/signup1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a ui-sref="signup1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             </ul>
+        </nav>
+        <!--<div class="tabs">
+            <a ui-sref="error" ui-sref="activeTab">Home</a>
+            <a ui-sref="search" ui-sref-active="activeTab">Search Extension Material</a>
+            <a ui-sref="error" ui-sref-active="activeTab">Farming Information</a>
+            <a ui-sref="error" ui-sref-active="activeTab">Surveys</a>
+            <a ui-sref="edit" ui-sref-active="activeTab">Edit</a>
+            <a ui-sref="resources" ui-sref-active="activeTab">Resources</a>
+            <a ui-sref="signup1" ui-sref-active="activeTab">Sign up</a>
+        </div>-->
+
+        <ui-view></ui-view>
+        <div class="footer">
+            <a ui-sref="about" ui-sref-active="activeTab">About</a>
+            <a ui-sref="contact" ui-sref-active="activeTab">Contact Us</a>    
         </div>
-    </div>
-</nav>
-    <div class="jumbotron">
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-                <div ng-view></div>
-            </div>
-        </div>
-    </div>
-</body>
+        <!-- Libraries -->
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-ui-router.min.js"></script>
+
+        <!-- Modules -->
+        <script src="app.js"></script>
+
+    </body>
 </html>

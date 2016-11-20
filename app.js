@@ -1,89 +1,63 @@
 (function () {
-    'use strict';
 
-    angular
-        .module('app', ['ngRoute', 'ngCookies'])
-        .controller('HeaderController', HeaderController)
-        .config(config)
-        .run(run);
+angular.module('app',['ui.router']);
 
-    HeaderController.$inject = ['$scope','$location'];
-    function HeaderController($scope, $location) 
-    {
-        $scope.isActive = function (viewLocation) 
-        { 
-            return viewLocation === $location.path();
-        };
-    }
+angular.module('app')
+.config(RoutesConfig);
 
-    config.$inject = ['$routeProvider', '$locationProvider'];
-    function config($routeProvider, $locationProvider) {
-        $routeProvider
-            .when('/', {
-                controller: 'HomeController',
-                templateUrl: 'home/home.view.html',
-                controllerAs: 'vm'
-            })
+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+function RoutesConfig($stateProvider, $urlRouterProvider) {
 
-            .when('/login', {
-                controller: 'HeaderController',
-                templateUrl: 'login/login.view.html',
-                controllerAs: 'vm'
-            })
+    // Redirect to tab 1 if no other URL matches
+    $urlRouterProvider.otherwise('/login');
 
-            .when('/about', {
-                controller: 'AboutController',
-                templateUrl: 'about/about.view.html',
-                controllerAs: 'vm'
-            })
-            .when('/contact', {
-                controller: 'ContactController',
-                templateUrl: 'contact/contact.view.html',
-                controllerAs: 'vm'
-            })
+    // Set up UI states
+    $stateProvider
+        .state('about', {
+            url: '/about',
+            templateUrl: 'about/about.view.html'
+        })
 
-            .when('/resources', {
-                controller: 'ResourceController',
-                templateUrl: 'resources/resources.view.html',
-                controllerAs: 'vm'
-            })
+        .state('contact', {
+            url: '/contact',
+            templateUrl: 'contact/contact.view.html'
+        })
 
-            .when('/search', {
-                controller: 'SearchController',
-                templateUrl: 'search/search.view.html',
-                controllerAs: 'vm'
-            })
+        .state('error', {
+            url: '/error',
+            urlTemplate: 'app-content/error.view.html'
+        })
 
-            .when('/signup1', {
-                controller: 'SignupController',
-                templateUrl: 'signup/signup1.view.html',
-                controllerAs: 'vm'
-            })
-            .when('/signup2', {
-                controller: 'SignupController',
-                templateUrl: 'signup/signup2.view.html',
-                controllerAs: 'vm'
-            })
+        .state('edit', {
+            url: '/edit',
+            templateUrl: 'edit/edit.view.html'
+        })
 
-            .otherwise({ redirectTo: '/login' });
-    }
+        .state('login', {
+            url: '/login',
+            templateUrl: 'login/login.view.html'
+        })
 
-    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
-    function run($rootScope, $location, $cookieStore, $http) {
-        // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-        }
+        .state('resources', {
+            url: '/resources',
+            templateUrl: 'resources/resources.view.html'
+        })
 
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/signup1']) === -1;
-            var loggedIn = $rootScope.globals.currentUser;
-            if (restrictedPage && !loggedIn) {
-                $location.path('/login');
-            }
+        .state('search', {
+            url: '/search',
+            templateUrl: 'search/search.view.html'
+        })
+
+        .state('signup1', {
+            url: '/signup1',
+            templateUrl: 'signup/signup1.view.html'
+        })
+        
+        .state('signup2', {
+            url: '/signup2',
+            templateUrl: 'signup/signup2.view.html'
         });
-    }
+}
+
 
 })();
