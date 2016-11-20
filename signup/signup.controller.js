@@ -17,7 +17,7 @@
         
         $scope.getRegions = function()
         {
-            var list = ['', 'Central', 'Northern', 'Southern'];
+            var list = ['', 'Central Malawi', 'Northern Malawi', 'Southern Malawi'];
             return list
         };
   
@@ -26,15 +26,15 @@
             var list = []
             if ($scope.selectedRegion !== '')
             {
-                if ($scope.selectedRegion == "Northern")
+                if ($scope.selectedRegion == "Northern Malawi")
                 {
                     list = northern;
                 }
-                else if ($scope.selectedRegion == "Central")
+                else if ($scope.selectedRegion == "Central Malawi")
                 {
                     list = central;
                 }
-                else if ($scope.selectedRegion == "Southern")
+                else if ($scope.selectedRegion == "Southern Malawi")
                 {
                     list = southern;
                 }
