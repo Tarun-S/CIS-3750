@@ -1,11 +1,11 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
     angular
-        .module('app')
-        .factory('UserService', UserService);
+        .module("app")
+        .factory("UserService", UserService);
 
-    UserService.$inject = ['$http'];
+    UserService.$inject = ["$http"];
     function UserService($http) {
         var service = {};
 
@@ -19,37 +19,37 @@
         return service;
 
         function GetAll() {
-            return $http.get('localhost:8000/users/').then(handleSuccess, handleError('Error getting all users'));
+            return $http.get("localhost:8000/users/").then(handleSuccess, handleError("Error getting all users"));
         }
 
         function GetById(id) {
-            return $http.get('localhost:8000/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            return $http.get("localhost:8000/users/" + id).then(handleSuccess, handleError("Error getting user by id"));
         }
 
         function GetByUsername(username) {
-            return $http.get('localhost:8000/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
+            return $http.get("localhost:8000/users/" + username).then(handleSuccess, handleError("Error getting user by username"));
         }
 
-// $http.post('http://localhost:7001/testApp/user/login', { username: username, password: password })
+// $http.post("http://localhost:7001/testApp/user/login", { username: username, password: password })
 //         .success(function (response) {
 //             callback(response);
 // });
 
         function Create(user) {
-            return $http.post('http://localhost:8000/farmers/', { username: username, password: password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError('Error creating user'));
+            return $http.post("http://localhost:8000/farmers/", { username: username, password: password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
             // return $http({
             //     url: "localhost:8000/farmers/",
             //     method: "POST",
             //     data: { "username": username, "password": password, "current_crops": [], "past_crops": [] },
-            // }).then(handleSuccess, handleError('Error creating user'));
+            // }).then(handleSuccess, handleError("Error creating user"));
         }
 
         function Update(user) {
-            return $http.put('localhost:8000/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put("localhost:8000/users/" + user.id, user).then(handleSuccess, handleError("Error updating user"));
         }
 
         function Delete(id) {
-            return $http.delete('localhost:8000/users/' + id).then(handleSuccess, handleError('Error deleting user'));
+            return $http.delete("localhost:8000/users/" + id).then(handleSuccess, handleError("Error deleting user"));
         }
 
         // private functions
