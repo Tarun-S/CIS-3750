@@ -36,6 +36,11 @@
                 templateUrl: 'about/about.view.html',
                 controllerAs: 'vm'
             })
+            .when('/contact', {
+                controller: 'ContactController',
+                templateUrl: 'contact/contact.view.html',
+                controllerAs: 'vm'
+            })
 
             .when('/resources', {
                 controller: 'ResourceController',
@@ -60,7 +65,7 @@
                 controllerAs: 'vm'
             })
 
-            .otherwise({ redirectTo: '/login' });
+            .otherwise({ redirectTo: '/signup2' });
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
