@@ -29,17 +29,13 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="region">Region</label>
-                        <select id = "region" onchange="filterDistricts()">
-                            <option></option>
-                            <option value="northern">Northern Region</option>
-                            <option value="central">Central Region</option>
-                            <option value="southern">Southern Region</option>
+                        <!--<select ng-model="selectedValue" ng-options="val for val in getAvailableMiniPies()">-->
+                        <select ng-model="selectedRegion" ng-options="val for val in getRegions()" ng-change="filterDistricts()">
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="district">District</label>
-                        <select id="district" ng-model="district">
-                            <option></option>
+                        <select ng-model="selectedDistrict" ng-options="val for val in filterDistricts()">
                         </select>
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
