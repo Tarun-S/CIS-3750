@@ -38,9 +38,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'login/login.view.html'
         })
 
-        .state('resources', {
-            url: '/resources',
-            templateUrl: 'resources/resources.view.html'
+        .state('survey', {
+            url: '/survey',
+            templateUrl: 'survey/survey.view.html'
         })
 
         .state('search', {
