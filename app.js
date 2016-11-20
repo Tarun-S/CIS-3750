@@ -65,7 +65,7 @@
                 controllerAs: 'vm'
             })
 
-            .otherwise({ redirectTo: '/signup2' });
+            .otherwise({ redirectTo: '/login' });
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
