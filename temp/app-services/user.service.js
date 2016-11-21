@@ -30,18 +30,8 @@
             return $http.get("localhost:8000/users/" + username).then(handleSuccess, handleError("Error getting user by username"));
         }
 
-// $http.post("http://localhost:7001/testApp/user/login", { username: username, password: password })
-//         .success(function (response) {
-//             callback(response);
-// });
-
         function Create(user) {
             return $http.post("http://localhost:8000/farmers/", { username: user.username, password: user.password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
-            // return $http({
-            //     url: "localhost:8000/farmers/",
-            //     method: "POST",
-            //     data: { "username": username, "password": password, "current_crops": [], "past_crops": [] },
-            // }).then(handleSuccess, handleError("Error creating user"));
         }
 
         function Update(user) {
