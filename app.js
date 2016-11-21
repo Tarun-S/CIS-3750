@@ -58,14 +58,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'search/search.view.html'
         })
 
-        .state('signup1', {
+        .state('signup', {
             url: '/signup1',
             templateUrl: 'signup/signup1.view.html'
-        })
-        
-        .state('signup2', {
-            url: '/signup2',
-            templateUrl: 'signup/signup2.view.html'
         });
 }
 

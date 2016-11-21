@@ -21,11 +21,6 @@
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null;   
 
-        $scope.changeView = function(view)
-        {
-            $location.path(view);
-        };
-
         $scope.submitUser = function()
         {
             console.log("username: ", $scope.username, " password: ", $scope.password);
