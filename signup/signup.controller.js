@@ -11,10 +11,13 @@
         var northern = ['', 'Chitipa', 'Karonga', 'Likoma', 'Mzimba', 'Nkhata Bay', 'Rumphi'];
         var central = ['', 'Dedza', 'Dowa', 'Kasungu', 'Lilongwe', 'Mchinji', 'Nkhotakota', 'Ntcheu', 'Ntchisi', 'Salima'];
         var southern = ['', 'Balaka', 'Blantyre', 'Chikwawa', 'Chiradzulu', 'Machinga', 'Mangochi', 'Mulanje', 'Mwanza', 'Nsanje', 'Thyolo', 'Phalombe', 'Zomba', 'Neno'];
-  
+
+        $scope.username = null;
+        $scope.password = null;
+        $scope.passwordConf = null;
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null;   
-        
+
         $scope.getRegions = function()
         {
             var list = ['', 'Central Malawi', 'Northern Malawi', 'Southern Malawi'];
@@ -41,6 +44,10 @@
             }
             return list;
         };
-    }   
 
+        $scope.CreateUser = function()
+        {
+            
+        }
+    }   
 })();

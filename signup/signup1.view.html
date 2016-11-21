@@ -13,25 +13,22 @@
                 <form role="form">
                     <div class="form-group">
                         <label class="control-label" for="exampleInputEmail1">Username</label>
-                        <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
+                        <input ng-model="username" class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="exampleInputPassword1">Password</label>
-                        <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+                        <input ng-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="exampleInputPassword2">Confirm</label>
-                        <input class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" type="password">
+                        <input ng-model="passwordConf" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" type="password">
                     </div>
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse">
-                            Next
+                    <div class="form-group">
+                        <button type="button">
                             <a ui-sref="signup2">Next</a>
                         </button>
                     </div>
                  </form>
-            <!--  <button type="submit" class="btn btn-default">Next</button>-->
-               
             </div>
         </div>
     </div>
