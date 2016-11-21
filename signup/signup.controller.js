@@ -5,8 +5,8 @@
         .module('app')
         .controller('SignupController', SignupController);
 
-    SignupController.$inject = ['$scope', '$location'];
-    function SignupController($scope, $location) 
+    SignupController.$inject = ['$scope', '$location', 'UserService'];
+    function SignupController($scope, $location, UserService) 
     {
         var northern = ['', 'Chitipa', 'Karonga', 'Likoma', 'Mzimba', 'Nkhata Bay', 'Rumphi'];
         var central = ['', 'Dedza', 'Dowa', 'Kasungu', 'Lilongwe', 'Mchinji', 'Nkhotakota', 'Ntcheu', 'Ntchisi', 'Salima'];
@@ -15,6 +15,9 @@
         $scope.username = null;
         $scope.password = null;
         $scope.passwordConf = null;
+        $scope.firstName = null;
+        $scope.lastName = null;
+        $scope.birthYear = null;
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null;   
 
@@ -57,7 +60,8 @@
 
         $scope.CreateUser = function()
         {
-            
+            var user = { username: $scope.username, password: $scope.password }
+            UserService.Create(user);
         }
     }   
 })();
