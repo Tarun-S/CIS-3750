@@ -36,7 +36,7 @@
 // });
 
         function Create(user) {
-            return $http.post("http://localhost:8000/farmers/", { username: username, password: password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
+            return $http.post("http://localhost:8000/farmers/", { username: user.username, password: user.password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
             // return $http({
             //     url: "localhost:8000/farmers/",
             //     method: "POST",
