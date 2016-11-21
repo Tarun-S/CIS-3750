@@ -31,6 +31,7 @@
         }
 
         function Create(user) {
+            console.log(user.username, user.password);
             return $http.post("http://localhost:8000/farmers/", { username: user.username, password: user.password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
         }
 
