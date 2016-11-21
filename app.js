@@ -59,7 +59,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         })
 
         .state('signup', {
-            url: '/signup1',
+            url: '/signup',
             templateUrl: 'signup/signup1.view.html'
         });
 }
