@@ -5,8 +5,8 @@
         .module('app')
         .controller('SignupController', SignupController);
 
-    SignupController.$inject = ['$scope'];
-    function SignupController($scope) 
+    SignupController.$inject = ['$scope', '$location'];
+    function SignupController($scope, $location) 
     {
         var northern = ['', 'Chitipa', 'Karonga', 'Likoma', 'Mzimba', 'Nkhata Bay', 'Rumphi'];
         var central = ['', 'Dedza', 'Dowa', 'Kasungu', 'Lilongwe', 'Mchinji', 'Nkhotakota', 'Ntcheu', 'Ntchisi', 'Salima'];
@@ -17,6 +17,16 @@
         $scope.passwordConf = null;
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null;   
+
+        $scope.changeView = function(view)
+        {
+            $location.path(view);
+        };
+
+        $scope.submitUser = function()
+        {
+            console.log("username: ", $scope.username, " password: ", $scope.password);
+        };
 
         $scope.getRegions = function()
         {
