@@ -1,15 +1,14 @@
 <div class="section" style=padding-top:50px;padding-bottom:50px; ng-controller="EditController">
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
-                <h1>Edit the crops that you are growing!</h1>
+            <div class="col-md-12">
+                <h1 align="center">Edit your profile!</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form id="userForm" role="form">
+                <h3>Edit User Information!</h3>
                     <div class="form-group">
-                        <div class="form-group">
                         <label class="control-label" for="exampleInputEmail1">Username</label>
                         <input ng-model="username" class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
                     </div>
@@ -35,30 +34,30 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="region">Region</label>
-                        <select ng-model="selectedRegion" ng-options="val for val in getRegions()" ng-change="filterDistricts()">
+                        <select ng-model="selectedRegion" ng-options="val for val in getRegions()" ng-change="filterDistricts()" class="form-control">
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="district">District</label>
-                        <select ng-model="selectedDistrict" ng-options="val for val in filterDistricts()">
+                        <select ng-model="selectedDistrict" ng-options="val for val in filterDistricts()" class="form-control">
                         </select>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-default" ng-click="saveUser()">Save Changes</button>
                     </div>
-                </form>
-                <form id="cropsForm"role="form">
-                    <div class="form-group" id="croplist">
-                        <label class="control-label" for="crop">Crop</label>
-                        <div ng-repeat="crop in cropList">
-                            Value: {{crop.name}}
-                            <input ng-model="crop.name" class="form-control" placeholder="Enter crop" type="text">                         
-                        </div>
+		    </div>
+            <div class="col-md-6">
+                <div class="form-group" id="croplist">
+                    <h3>Add Crops!</h3>
+                    <label class="control-label" for="crop">Crop</label>
+                    <div ng-repeat="crop in cropList">
+                        Value: {{crop.name}}
+                        <input ng-model="crop.name" class="form-control" placeholder="Enter crop" type="text">                         
                     </div>
-                    <button type="button" class="btn btn-default" ng-click="addCrop()">Add Crop</button>
-                    <button type="submit" class="btn btn-default" ng-click="saveCrops()">Save Changes</button>
-                </form>
-            </div>
+                </div>
+                <button type="button" class="btn btn-default" ng-click="addCrop()">Add Crop</button>
+                <button type="submit" class="btn btn-default" ng-click="saveCrops()">Save Changes</button>
+		  </div>
         </div>
     </div>
 </div>
