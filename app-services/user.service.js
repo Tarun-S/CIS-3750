@@ -37,6 +37,10 @@
                 last_name: user.lastName, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
         }
 
+        // function Create(user) {
+        //     return $http.post("http://localhost:8000/farmers/", { username: user.username, password: user.password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
+        // }
+
         function Update(user) {
             return $http.put('localhost:8000/farmers/' + user.id).then(handleSuccess, handleError('Error updating user'));
         }
