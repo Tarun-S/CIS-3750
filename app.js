@@ -23,6 +23,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'contact/contact.view.html'
         })
 
+        .state('contact-form', {
+            url: '/contact/form',
+            templateUrl: 'contact/contact-form.view.html'
+        })
+
         .state('error', {
             url: '/error',
             urlTemplate: 'app-content/error.view.html'
