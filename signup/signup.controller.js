@@ -23,7 +23,8 @@
 
         $scope.submitUser = function()
         {
-            console.log("username: ", $scope.username, " password: ", $scope.password);
+            var user = { username: $scope.username, password: $scope.password }
+            UserService.Create(user);
         };
 
         $scope.getRegions = function()
