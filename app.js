@@ -38,14 +38,14 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'edit/edit.view.html'
         })
 
-        .state('farminginfo', {
-            url: '/farminginfo',
-            templateUrl: 'farminginfo/farminginfo.view.html'
-        })
-
         .state('login', {
             url: '/login',
             templateUrl: 'login/login.view.html'
+        })
+
+        .state('resource', {
+            url: '/resource',
+            templateUrl: 'resource/resource.view.html'
         })
 
         .state('survey', {
