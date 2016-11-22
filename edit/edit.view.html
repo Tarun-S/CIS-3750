@@ -50,8 +50,7 @@
                 <div class="form-group" id="croplist">
                     <h3>Add Crops!</h3>
                     <label class="control-label" for="crop">Crop</label>
-                    <div ng-repeat="crop in cropList">
-                        Value: {{crop.name}}
+                    <div ng-repeat="crop in cropList" style=padding-top:5px;padding-bottom:5px>
                         <input ng-model="crop.name" class="form-control" placeholder="Enter crop" type="text">                         
                     </div>
                 </div>
