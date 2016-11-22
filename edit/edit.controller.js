@@ -11,12 +11,10 @@
         var central = ['', 'Dedza', 'Dowa', 'Kasungu', 'Lilongwe', 'Mchinji', 'Nkhotakota', 'Ntcheu', 'Ntchisi', 'Salima'];
         var southern = ['', 'Balaka', 'Blantyre', 'Chikwawa', 'Chiradzulu', 'Machinga', 'Mangochi', 'Mulanje', 'Mwanza', 'Nsanje', 'Thyolo', 'Phalombe', 'Zomba', 'Neno'];
 
-        $scope.username = null;
-        $scope.password = null;
-        $scope.passwordConf = null;
-        $scope.firstName = null;
-        $scope.lastName = null;
-        $scope.birthYear = null;
+        $scope.error = "";
+
+        $scope.user = { username: null, firstName: null, lastName: null, birthYear: null, crops: null, region: null, district: null };
+
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null; 
 
@@ -24,24 +22,24 @@
 
         $scope.getRegions = function()
         {
-            var list = ['', 'Central Malawi', 'Northern Malawi', 'Southern Malawi'];
+            var list = ['', 'Central', 'Northern', 'Southern'];
             return list
         };
   
         $scope.filterDistricts = function()
         {
             var list = []
-            if ($scope.selectedRegion !== '')
+            if ($scope.user.region !== '')
             {
-                if ($scope.selectedRegion == "Northern Malawi")
+                if ($scope.selectedRegion == "Northern")
                 {
                     list = northern;
                 }
-                else if ($scope.selectedRegion == "Central Malawi")
+                else if ($scope.selectedRegion == "Central")
                 {
                     list = central;
                 }
-                else if ($scope.selectedRegion == "Southern Malawi")
+                else if ($scope.selectedRegion == "Southern")
                 {
                     list = southern;
                 }
@@ -51,44 +49,31 @@
 
         $scope.saveUser = function()
         {
-            UserService.update(this);
+            $scope.user.crops = $scope.cropList;
+            $scope.user.region = $scope.selectedRegion;
+            $scope.user.district = $scope.selectedDistrict;
+            
+            UserService.update($scope.user);
         }
 
         $scope.addCrop = function()
         {
-            $scope.cropList.push( { name: '' } );
-            // var head = document.getElementById("croplist");
-            // //find div
-            // var div = document.createElement('div');
-
-            // //add text to div
-            // var label = document.createElement("Label");
-            // var input = document.createElement("Input");
-
-            // label.setAttribute("for", "input");
-            // label.className = "control-label";
-            // label.innerHTML = "Crop";
-            // div.appendChild(label);
-    
-            // input.className = "form-control";
-            // input.id = "crop";
-            // input.setAttribute("placeholder", "Enter crop");
-            // input.setAttribute("type", "text");
-            // div.appendChild(input);
-
-            // //append div to form
-            // head.appendChild(div);
-        };
-
-        $scope.saveCrops = function()
-        {
-            var head = document.getElementById("cropList");
-            var crops = head.getElementsByTagName('div');
-            var cropList = [];
-            for (var i = 0; i < crops.length; i += 1) 
+            var test = true;
+            for (var i = 0; i < $scope.cropList.length; i++)
             {
-                var crop = crops[i].getElementsByTagName('input');
-                cropList.push(crop.value);
+                if ($scope.cropList[i].name == "")
+                {
+                    test = false;
+                }
+            }
+            if (test == true)
+            {
+                $scope.error = "";
+                $scope.cropList.push( { name: '' } );
+            }
+            else 
+            {
+                $scope.error = "Please enter all of the crops before adding a new one.";
             }
         };
     }

@@ -9,28 +9,16 @@
             <div class="col-md-6">
                 <h3>Edit User Information!</h3>
                     <div class="form-group">
-                        <label class="control-label" for="exampleInputEmail1">Username</label>
-                        <input ng-model="username" class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputPassword1">Password</label>
-                        <input ng-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputPassword2">Confirm</label>
-                        <input ng-model="passwordConf" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" type="password">
-                    </div>
-                    <div class="form-group">
                         <label class="control-label" for="firstName">First Name</label>
-                        <input ng-model="firstName" class="form-control" id="firstName" placeholder="First Name" type="text">
+                        <input ng-model="user.firstName" class="form-control" id="firstName" placeholder="First Name" type="text">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="lastName">Last Name</label>
-                        <input ng-model="lastName" class="form-control" id="lastName" placeholder="Last Name" type="text">
+                        <input ng-model="user.lastName" class="form-control" id="lastName" placeholder="Last Name" type="text">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="birthYear">Birth Year</label>
-                        <input ng-model="birthYear" class="form-control" id="birthYear" placeholder="Birth Year" type="number">
+                        <input ng-model="user.birthYear" class="form-control" id="birthYear" placeholder="Birth Year" type="number">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="region">Region</label>
@@ -53,9 +41,9 @@
                     <div ng-repeat="crop in cropList" style=padding-top:5px;padding-bottom:5px>
                         <input ng-model="crop.name" class="form-control" placeholder="Enter crop" type="text">                         
                     </div>
+                    {{ error }}
                 </div>
                 <button type="button" class="btn btn-default" ng-click="addCrop()">Add Crop</button>
-                <button type="submit" class="btn btn-default" ng-click="saveCrops()">Save Changes</button>
 		  </div>
         </div>
     </div>

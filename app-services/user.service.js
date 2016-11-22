@@ -31,12 +31,14 @@
         }
 
         function Create(user) {
-            console.log(user.username, user.password);
-            return $http.post("http://localhost:8000/farmers/", { username: user.username, password: user.password, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
+            //console.log(user.username, user.password);
+            //$http.post("http://localhost:8000/users/", { username: user.username, password: user.password })
+            return $http.post("http://localhost:8000/farmers/", { username: user.username, password: user.password, first_name: user.firstName, 
+                last_name: user.lastName, current_crops: [], past_crops: [] }).then(handleSuccess, handleError("Error creating user"));
         }
 
         function Update(user) {
-            return $http.put('localhost:8000/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('localhost:8000/farmers/' + user.id).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {

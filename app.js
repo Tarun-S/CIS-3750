@@ -38,6 +38,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'farminginfo/farminginfo.view.html'
         })
 
+        .state('farminginfo.item', {
+            url: '/item/{itemId}',
+            templateUrl: 'farminginfo.farminginfo.item.view.html'
+        })
+
         .state('login', {
             url: '/login',
             templateUrl: 'login/login.view.html'
