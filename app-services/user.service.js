@@ -23,7 +23,7 @@
         }
 
         function GetById(id) {
-            return $http.get('http://localhost:8000/farmers/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            return $http.get('http://localhost:8000/farmers/' + id.toString()).then(handleSuccess, handleError('Error getting user by id'));
         }
 
         function GetByUsername(username) {

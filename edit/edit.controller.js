@@ -13,8 +13,8 @@
 
         $scope.error = "";
 
-        $scope.user = null;
-
+        $scope.firstName = null;
+        $scope.lastName = null;
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null; 
 
@@ -22,9 +22,15 @@
 
         $scope.loadUser = function ()
         {
-            var test = localStorage.getItem('user');
-            var response = UserService.GetById(parseInt(test.id));
-            console.log(response);
+            var test = localStorage.getItem("user");
+            console.log(test);
+            if (test.id)
+            {
+                console.log(test.id);
+                var response = UserService.GetById(test.id);
+                
+            }
+            
         };
 
         $scope.getRegions = function()

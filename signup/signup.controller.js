@@ -52,7 +52,7 @@
                 UserService.Create($scope)
                 .then(function (response) 
                 {
-                    console.log(response);
+                    console.log(response.id);
                     if (response.id) 
                     {
                         localStorage.setItem("user", response);
