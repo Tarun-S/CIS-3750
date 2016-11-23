@@ -65,4 +65,19 @@ color: #fff;
   background-color: #1D954E;
 }
 
+.resource {
+    padding-top: 20px;
+    background-color: #2EA662;
+    background-clip: content-box;
+}
+
+.interior {
+    padding-top:20px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    background-color: #7EDEA8;
+    background-clip: padding-box;
+}
+
 
