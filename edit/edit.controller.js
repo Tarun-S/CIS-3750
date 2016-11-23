@@ -28,7 +28,7 @@
             {
                 console.log(test.id);
                 var response = UserService.GetById(test.id);
-                
+                $scope.user = { }
             }
             
         };
