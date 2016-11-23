@@ -8,9 +8,7 @@
     ResourceController.$inject = ['$scope', '$http'];
     function ResourceController($scope, $http) 
     {
-        $scope.doWork = function()
-        {
-            var resourceArray = $http.get('http://localhost:8000/resources/')
+        var resourceArray = $http.get('http://localhost:8000/resources/')
                 .then(function(res) {return res.data}, function(msg) {return msg});
             var header = null;
             var headerInfo = null;
@@ -19,7 +17,9 @@
             var tags = null;
             var content = null;
             var contentInfo = null;
-
+            
+        $scope.doWork = function()
+        {
             for (var i = 0; i < resourceArray.length; i++)
             {
                 if(resourceArray[i].title == undefined
@@ -50,6 +50,7 @@
 
         function contentClosure(content)
         {
+            console.log("testing123");
             return function()
             {
                 if(content.css("visibility") === "hidden")
@@ -61,7 +62,7 @@
                     content.css("visibility", "hidden");
                 }
             }
-        };
+        }
 
         $scope.doWork();   
     }
