@@ -1,0 +1,49 @@
+<div class="container" ng-controller="PestsController">
+    <h3 style="text-align: center">Are you aware of the current pests in your region?</h3>
+    
+    <div>
+        <h4 style="text-align: center; margin-top:50px">Chitipa</h4>
+        <p style="text-align: center">Red Locusts</p>
+        <p style="text-align: center">Bean Fly</p>
+        <p style="text-align: center">Plague Thrip</p>
+    </div>
+
+    <div>
+        <h4 style="text-align: center; margin-top:50px">Likoma</h4>
+        <p style="text-align: center">Aphids</p>
+        <p style="text-align: center">Grey Cluster Buy</p>
+        <p style="text-align: center">Plague Thrip</p>
+    </div>
+
+    <div>
+        <h4 style="text-align: center; margin-top:50px">Kasunga</h4>
+        <p style="text-align: center">Loopers</p>
+        <p style="text-align: center">Bean Fly</p>
+        <p style="text-align: center">Wireworm</p>
+    </div>
+
+    <div>
+        <h4 style="text-align: center; margin-top:50px;">Machinga</h4>
+        <p style="text-align: center">Red Locusts</p>
+        <p style="text-align: center">Armyworm</p>
+        <p style="text-align: center; margin-bottom:50px">Aphids</p>
+    </div>
+
+
+    <h4 style="text-align: center">Please select whether you were aware of these pests.</h4>
+    
+
+    <form style="text-align: center">
+        <label class="radio-inline">
+            <input type="radio" value="1" ng-model="checkBox" name="optradio">Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value="0" ng-model="checkBox" name="optradio">No
+        </label>
+    </form>
+
+    <div style="text-align:center; margin-top:20px">
+      <button class="btn btn-default" ng-click="submitPests()">Submit</button>
+    </div>
+
+</div>
