@@ -5,9 +5,18 @@
         .module('app')
         .controller('SurveySampleController', SurveySampleController);
 
-    SurveySampleController.$inject = ['$rootScope'];
-    function SurveySampleController($rootScope) {
-        var vm = this;
+
+    SurveySampleController.$inject = ['$scope', '$window'];
+    function SurveySampleController($scope)
+    {
+   
+        $scope.submitSurvey = function($window)
+        {
+        	console.log($scope.checkBox);
+        	$scope.TArea = '';
+        	$scope.checkBox = '';
+        	window.alert('Thank you for your input');
+        };
 
     }
 })();

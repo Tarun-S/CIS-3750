@@ -1,0 +1,22 @@
+<div class="container" ng-controller="CropSurveyController">
+    <h3 style="text-align: center">Please select the crops you are growing successfully</h3>
+    
+    <form style="text-align: center">
+
+        <input type="checkbox" value="1"  ng-checked="crops" name="Carrot">Carrot<br>
+        <input type="checkbox" value="2"  ng-checked="crops" name="Tobacco">Tobacco<br>
+        <input type="checkbox" value="3"  ng-checked="crops"name="Potato">Potato<br>
+        <input type="checkbox" value="4"  ng-checked="crops"name="Sugar">Sugar<br>
+        <input type="checkbox" value="5"  ng-checked="crops"name="Soybean">Soybean<br>
+        <input type="checkbox" value="6"  ng-checked="crops"name="Wheat">Wheat<br>
+        <input type="checkbox" value="7"  ng-checked="crops"name="Rice">Rice<br>
+        <input type="checkbox" value="8"  ng-checked="crops"name="Coffee">Coffee<br>
+
+    </form>
+    
+    
+    <div style="text-align:center; margin-top:20px">
+      <button class="btn btn-default" ng-click="submitCrops()">Submit</button>
+    </div>
+
+</div>

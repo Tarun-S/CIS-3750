@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('ResourceController', ResourceController);
+        .controller('SurveyController', SurveyController);
 
-    ResourceController.$inject = ['$rootScope'];
-    function ResourceController($rootScope) {
+    SurveyController.$inject = ['$rootScope'];
+    function SurveyController($rootScope) {
         var vm = this;
 
     }

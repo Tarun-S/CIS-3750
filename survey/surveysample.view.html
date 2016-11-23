@@ -1,20 +1,21 @@
-<div class="container">
+<div class="container" ng-controller="SurveySampleController">
     <h3 style="text-align: center">Have you seen evidence of the red locusts eating your crops?</h3>
     
     <form style="text-align: center">
         <label class="radio-inline">
-            <input type="radio" name="optradio">Yes
+            <input type="radio" value="1" ng-model="checkBox" name="optradio">Yes
         </label>
         <label class="radio-inline">
-            <input type="radio" name="optradio">No
+            <input type="radio" value="0" ng-model="checkBox" name="optradio">No
         </label>
     </form>
     
     <h4 style="text-align: center">If you have seen additional pests consuming your crops this season, please record them below.</h4>
       
-    <textarea class="form-control" rows="5" style="display: block; margin-left:auto;margin-right:auto;width: 50%"></textarea>
+    <textarea class="form-control" rows="5" style="display: block; margin-left:auto;margin-right:auto;width: 50%" ng-model="TArea"></textarea>
     
     <div style="text-align:center">
-      <button class="btn btn-default">Submit</button>
+      <button class="btn btn-default" ng-click="submitSurvey()">Submit</button>
     </div>
+
 </div>

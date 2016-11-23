@@ -58,6 +58,16 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'survey/surveysample.view.html'
         })
 
+        .state('pests', {
+            url: '/pests',
+            templateUrl: 'survey/pests.view.html'
+        })
+
+        .state('crops', {
+            url: '/crops',
+            templateUrl: 'survey/cropsurvey.view.html'
+        })
+
         .state('search', {
             url: '/search',
             templateUrl: 'search/search.view.html'
