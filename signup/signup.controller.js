@@ -49,6 +49,7 @@
                 var user = { username: $scope.username, password: $scope.password, first_name: 
                              $scope.firstName, last_name: $scope.lastName, birth_year: $scope.birthYear, 
                              region: $scope.selectedRegion.toString(), district: $scope.selectedDistrict.toString() };
+                             
                 UserService.Create($scope)
                 .then(function (response) 
                 {
