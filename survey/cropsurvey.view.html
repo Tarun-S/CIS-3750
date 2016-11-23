@@ -1,15 +1,21 @@
 <div class="container" ng-controller="SurveySampleController">
     <h3 style="text-align: center">Please select the crops you are growing</h3>
     
-    <form style="text-align: center">
+    <form ng-modal="cropCheckBox" style="text-align: center">
 
-        <input type="radio" value="1" ng-model="checkBox" name="optradio">Carrot<br>
-        <input type="radio" value="0" ng-model="checkBox" name="optradio">Tobacco
+        <input type="checkbox" value="1"  name="Carrot">Carrot<br>
+        <input type="checkbox" value="2"  name="Tobacco">Tobacco<br>
+        <input type="checkbox" value="3"  name="Potato">Potato<br>
+        <input type="checkbox" value="4"  name="Sugar">Sugar<br>
+        <input type="checkbox" value="5"  name="Soybean">Soybean<br>
+        <input type="checkbox" value="6"  name="Wheat">Wheat<br>
+        <input type="checkbox" value="7"  name="Rice">Rice<br>
+        <input type="checkbox" value="8"  name="Coffee">Coffee<br>
 
     </form>
     
     
-    <div style="text-align:center">
+    <div style="text-align:center; margin-top:20px">
       <button class="btn btn-default" ng-click="submitSurvey()">Submit</button>
     </div>
 
