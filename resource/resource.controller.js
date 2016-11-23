@@ -7,12 +7,11 @@
 
     ResourceController.$inject = ['$scope'];
     function ResourceController($scope) 
-    {    
-        //trevor, variables are declare like $scope.whatever, and a function is declared below.  
-        //If you have any other questions i will be on slack all night.  
-        // $scope.someFunction = function ()
-        // {
-
-        // };
-    }
+    {
+        $scope.test = "FUCK THIS";
+        $scope.someFunction = function()
+        {
+            console.log("is this working");
+        };
+    }   
 })();
