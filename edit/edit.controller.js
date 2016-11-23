@@ -42,7 +42,7 @@
         $scope.filterDistricts = function()
         {
             var list = []
-            if ($scope.user.region !== '')
+            if ($scope.selectedRegion !== '')
             {
                 if ($scope.selectedRegion == "Northern")
                 {
