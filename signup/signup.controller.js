@@ -49,13 +49,14 @@
                 var user = { username: $scope.username, password: $scope.password, first_name: 
                              $scope.firstName, last_name: $scope.lastName, birth_year: $scope.birthYear, 
                              region: $scope.selectedRegion.toString(), district: $scope.selectedDistrict.toString() };
+                             
                 UserService.Create($scope)
                 .then(function (response) 
                 {
                     console.log(response.id);
                     if (response.id) 
                     {
-                        localStorage.setItem("user", JSON.stringify(reponse));
+                        localStorage.setItem("user", JSON.stringify(response));
                         $scope.error = "";
                         $location.path('/about');
                     } 

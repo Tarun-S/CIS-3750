@@ -36,7 +36,7 @@
         }
 
         function Update(user) {
-            return $http.put('localhost:8000/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('htpp://localhost:8000/farmers/' + user.id, { first_name: user.first_name, last_name: user.last_name }).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {

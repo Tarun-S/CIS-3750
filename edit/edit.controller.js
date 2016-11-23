@@ -27,9 +27,14 @@
             console.log(test);
             if (test.id)
             {
-                console.log(test.id);
-                var response = UserService.GetById(test.id);
-                $scope.user = { }
+                //console.log(test.id);
+                //var response = UserService.GetById(test.id);
+                $scope.user = { id: test.id, first_name: test.first_name, last_name: test.last_name, 
+                                district: test.district, region: test.region, 
+                                current_crops: test.current_crops, past_crops: test.past_crops };
+
+                $scope.selectedRegion = test.region;
+                $scope.selectedDistrict = test.district;
             }
             
         };
@@ -63,11 +68,11 @@
 
         $scope.saveUser = function()
         {
-            $scope.user.crops = $scope.cropList;
+            $scope.user.current_crops = $scope.cropList;
             $scope.user.region = $scope.selectedRegion;
             $scope.user.district = $scope.selectedDistrict;
             
-            UserService.update($scope.user);
+            UserService.Update($scope.user);
         }
 
         $scope.addCrop = function()
