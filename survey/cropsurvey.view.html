@@ -1,0 +1,16 @@
+<div class="container" ng-controller="SurveySampleController">
+    <h3 style="text-align: center">Please select the crops you are growing</h3>
+    
+    <form style="text-align: center">
+
+        <input type="radio" value="1" ng-model="checkBox" name="optradio">Carrot<br>
+        <input type="radio" value="0" ng-model="checkBox" name="optradio">Tobacco
+
+    </form>
+    
+    
+    <div style="text-align:center">
+      <button class="btn btn-default" ng-click="submitSurvey()">Submit</button>
+    </div>
+
+</div>
