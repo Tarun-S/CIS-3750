@@ -1,28 +1,7 @@
-<div class="container">
-    <h1>Farming Information</h1>
-    <p>Extension information to help farmers with unfamiliar crops and procedures</p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="active">
-                <td> 
-                    <a href="#" style="color: black">Best Practices Growing Corn 11/11/2016</a>
-                </td>
-            </tr>
-            <tr class="active">
-                <td>
-                    <a href="#" style="color: black">Protect Potatoes from Drought?</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="active">
-                    <a href="#" style="color: black">Why Grow Soy Beans?</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="section" style=padding-top:50px;padding-bottom:50px; ng-controller="ResourceController">
+    <div class="container">
+        <h1>Farming Information</h1>
+        <p>Extension information to help farmers with unfamiliar crops and procedures</p>
+        <div ng-model="resources"></div>
+    </div>
 </div>
