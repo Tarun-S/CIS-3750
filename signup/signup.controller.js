@@ -93,11 +93,5 @@
             }
             return list;
         };
-
-        $scope.CreateUser = function()
-        {
-            //var user = { username: $scope.username, password: $scope.password }
-            UserService.Create(user);
-        }
     }   
 })();
