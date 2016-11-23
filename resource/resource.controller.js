@@ -48,7 +48,7 @@
             }
         };
 
-        $scope.contentClosure = function(content)
+        function contentClosure(content)
         {
             return function()
             {
