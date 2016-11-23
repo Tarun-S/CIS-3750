@@ -52,9 +52,10 @@
                 UserService.Create($scope)
                 .then(function (response) 
                 {
-                    if (response.success) 
+                    console.log(response);
+                    if (response.id) 
                     {
-                        localStorage.setItem('user') = response;
+                        localStorage.setItem("user", response);
                         $scope.error = "";
                         $location.path('/about');
                     } 

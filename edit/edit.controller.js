@@ -6,14 +6,14 @@
         .controller('EditController', EditController);
 
     EditController.$inject = ['$scope', 'UserService'];
-    function EditController($scope) {
+    function EditController($scope, UserService) {
         var northern = ['', 'Chitipa', 'Karonga', 'Likoma', 'Mzimba', 'Nkhata Bay', 'Rumphi'];
         var central = ['', 'Dedza', 'Dowa', 'Kasungu', 'Lilongwe', 'Mchinji', 'Nkhotakota', 'Ntcheu', 'Ntchisi', 'Salima'];
         var southern = ['', 'Balaka', 'Blantyre', 'Chikwawa', 'Chiradzulu', 'Machinga', 'Mangochi', 'Mulanje', 'Mwanza', 'Nsanje', 'Thyolo', 'Phalombe', 'Zomba', 'Neno'];
 
         $scope.error = "";
 
-        $scope.user = { username: null, firstName: null, lastName: null, birthYear: null, crops: null, region: null, district: null };
+        $scope.user = null;
 
         $scope.selectedRegion = null;
         $scope.selectedDistrict = null; 
@@ -22,7 +22,9 @@
 
         $scope.loadUser = function ()
         {
-            
+            var test = localStorage.getItem('user');
+            var response = UserService.GetById(parseInt(test.id));
+            console.log(response);
         };
 
         $scope.getRegions = function()
@@ -81,6 +83,6 @@
                 $scope.error = "Please enter all of the crops before adding a new one.";
             }
         };
-        $scope.init();
+        $scope.loadUser();
     }
 })();

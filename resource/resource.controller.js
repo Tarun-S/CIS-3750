@@ -8,7 +8,7 @@
     ResourceController.$inject = ['$scope', '$http'];
     function ResourceController($scope, $http) 
     {
-        var resourceArray = $http.get('localhost:8000/resources/')
+        var resourceArray = $http.get('http://localhost:8000/resources/')
             .then(function(res) {return res.data}, function(msg) {return msg});
         var header = null;
         var headerInfo = null;
