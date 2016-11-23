@@ -22,7 +22,8 @@
 
         $scope.loadUser = function ()
         {
-            var test = localStorage.getItem("user");
+            var test = JSON.parse(localStorage.getItem("user"));
+            //var test = localStorage.getItem("user");
             console.log(test);
             if (test.id)
             {

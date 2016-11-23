@@ -55,7 +55,8 @@
                     console.log(response.id);
                     if (response.id) 
                     {
-                        localStorage.setItem("user", response);
+                        var temp = JSON.stringify(reponse);
+                        localStorage.setItem("user", temp);
                         $scope.error = "";
                         $location.path('/about');
                     } 
