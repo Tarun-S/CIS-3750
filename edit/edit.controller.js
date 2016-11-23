@@ -5,36 +5,82 @@
         .module('app')
         .controller('EditController', EditController);
 
-    EditController.$inject = ['$rootScope'];
-    function EditController($rootScope) {
-        var vm = this;
-    }
+    EditController.$inject = ['$scope', 'UserService'];
+    function EditController($scope) {
+        var northern = ['', 'Chitipa', 'Karonga', 'Likoma', 'Mzimba', 'Nkhata Bay', 'Rumphi'];
+        var central = ['', 'Dedza', 'Dowa', 'Kasungu', 'Lilongwe', 'Mchinji', 'Nkhotakota', 'Ntcheu', 'Ntchisi', 'Salima'];
+        var southern = ['', 'Balaka', 'Blantyre', 'Chikwawa', 'Chiradzulu', 'Machinga', 'Mangochi', 'Mulanje', 'Mwanza', 'Nsanje', 'Thyolo', 'Phalombe', 'Zomba', 'Neno'];
 
-    function addCrop()
-    {
-        var head = document.getElementById("croplist");
-        //find div
-        var div = document.createElement('div');
+        $scope.error = "";
 
-        //add text to div
-        var label = document.createElement("Label");
-        var input = document.createElement("Input");
+        $scope.user = { username: null, firstName: null, lastName: null, birthYear: null, crops: null, region: null, district: null };
 
-    // <label class="control-label" for="crop">Crop</label>
-    //                   <input class="form-control" id="crop" placeholder="Enter crop" type="text">
+        $scope.selectedRegion = null;
+        $scope.selectedDistrict = null; 
 
-        label.setAttribute("for", "input");
-        label.className = "control-label";
-        label.innerHTML = "Crop";
-        div.appendChild(label);
-    
-        input.className = "form-control";
-        input.id = "crop";
-        input.setAttribute("placeholder", "Enter crop");
-        input.setAttribute("type", "text");
-        div.appendChild(input);
+        $scope.cropList = [ { name: '' } ];
 
-        //append div to form
-        head.appendChild(div);
+        $scope.loadUser = function ()
+        {
+            
+        };
+
+        $scope.getRegions = function()
+        {
+            var list = ['', 'Central', 'Northern', 'Southern'];
+            return list
+        };
+  
+        $scope.filterDistricts = function()
+        {
+            var list = []
+            if ($scope.user.region !== '')
+            {
+                if ($scope.selectedRegion == "Northern")
+                {
+                    list = northern;
+                }
+                else if ($scope.selectedRegion == "Central")
+                {
+                    list = central;
+                }
+                else if ($scope.selectedRegion == "Southern")
+                {
+                    list = southern;
+                }
+            }
+            return list;
+        };
+
+        $scope.saveUser = function()
+        {
+            $scope.user.crops = $scope.cropList;
+            $scope.user.region = $scope.selectedRegion;
+            $scope.user.district = $scope.selectedDistrict;
+            
+            UserService.update($scope.user);
+        }
+
+        $scope.addCrop = function()
+        {
+            var test = true;
+            for (var i = 0; i < $scope.cropList.length; i++)
+            {
+                if ($scope.cropList[i].name == "")
+                {
+                    test = false;
+                }
+            }
+            if (test == true)
+            {
+                $scope.error = "";
+                $scope.cropList.push( { name: '' } );
+            }
+            else 
+            {
+                $scope.error = "Please enter all of the crops before adding a new one.";
+            }
+        };
+        $scope.init();
     }
 })();
