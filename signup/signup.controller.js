@@ -46,11 +46,15 @@
 
             if (test !== false)
             {
+                var user = { username: $scope.username, password: $scope.password, first_name: 
+                             $scope.firstName, last_name: $scope.lastName, birth_year: $scope.birthYear, 
+                             region: $scope.selectedRegion.toUpperCase(), district: $scope.selectedDistrict.toUpperCase() };
                 UserService.Create($scope)
                 .then(function (response) 
                 {
                     if (response.success) 
                     {
+                        localStorage.setItem('user') = response;
                         $scope.error = "";
                         $location.path('/about');
                     } 

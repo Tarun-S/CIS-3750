@@ -20,6 +20,11 @@
 
         $scope.cropList = [ { name: '' } ];
 
+        $scope.loadUser = function ()
+        {
+            
+        };
+
         $scope.getRegions = function()
         {
             var list = ['', 'Central', 'Northern', 'Southern'];
@@ -76,5 +81,6 @@
                 $scope.error = "Please enter all of the crops before adding a new one.";
             }
         };
+        $scope.init();
     }
 })();

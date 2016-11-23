@@ -3,7 +3,14 @@
 angular.module('app',['ui.router']);
 
 angular.module('app')
+.controller(AppController)
 .config(RoutesConfig);
+
+AppController.$inject = ['$scope'];
+function AppController($scope)
+{
+    $scope.username = "batman";
+}
 
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 function RoutesConfig($stateProvider, $urlRouterProvider) {
