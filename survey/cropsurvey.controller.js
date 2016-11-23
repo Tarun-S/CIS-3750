@@ -12,7 +12,7 @@
    
         $scope.submitCrops = function($window)
         {
-        	$scope.checkBox = '';
+        	$scope.crops = '';
         	window.alert('Thank you for your input');
         };
 

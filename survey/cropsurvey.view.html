@@ -1,22 +1,22 @@
-<div class="container" ng-controller="SurveySampleController">
-    <h3 style="text-align: center">Please select the crops you are growing</h3>
+<div class="container" ng-controller="CropSurveyController">
+    <h3 style="text-align: center">Please select the crops you are growing successfully</h3>
     
-    <form ng-modal="cropCheckBox" style="text-align: center">
+    <form style="text-align: center">
 
-        <input type="checkbox" value="1"  name="Carrot">Carrot<br>
-        <input type="checkbox" value="2"  name="Tobacco">Tobacco<br>
-        <input type="checkbox" value="3"  name="Potato">Potato<br>
-        <input type="checkbox" value="4"  name="Sugar">Sugar<br>
-        <input type="checkbox" value="5"  name="Soybean">Soybean<br>
-        <input type="checkbox" value="6"  name="Wheat">Wheat<br>
-        <input type="checkbox" value="7"  name="Rice">Rice<br>
-        <input type="checkbox" value="8"  name="Coffee">Coffee<br>
+        <input type="checkbox" value="1"  ng-checked="crops" name="Carrot">Carrot<br>
+        <input type="checkbox" value="2"  ng-checked="crops" name="Tobacco">Tobacco<br>
+        <input type="checkbox" value="3"  ng-checked="crops"name="Potato">Potato<br>
+        <input type="checkbox" value="4"  ng-checked="crops"name="Sugar">Sugar<br>
+        <input type="checkbox" value="5"  ng-checked="crops"name="Soybean">Soybean<br>
+        <input type="checkbox" value="6"  ng-checked="crops"name="Wheat">Wheat<br>
+        <input type="checkbox" value="7"  ng-checked="crops"name="Rice">Rice<br>
+        <input type="checkbox" value="8"  ng-checked="crops"name="Coffee">Coffee<br>
 
     </form>
     
     
     <div style="text-align:center; margin-top:20px">
-      <button class="btn btn-default" ng-click="submitSurvey()">Submit</button>
+      <button class="btn btn-default" ng-click="submitCrops()">Submit</button>
     </div>
 
 </div>
